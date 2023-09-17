@@ -1,0 +1,175 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.grid-container >*{
+    box-shadow: -1px 0px 4px 0px black;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.header{
+    grid-area: header;
+    background-color: rgb(235, 247, 247);
+}
+
+.imgheader{
+    float: left;
+    margin-left: 30px;
+}
+
+h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 40px;
+    margin-top: 40px;
+}
+
+.slider1{
+    grid-area: slider1;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.img{
+    width: 415px;
+}
+
+#imagenes{
+    width: 415px;
+    margin: 0px auto;
+    overflow: hidden;
+}
+
+#imagenes ul{
+    width: 2075px;
+    display: flex; 
+    
+    animation: slide 20s infinite alternate;
+}
+
+@keyframes slide{
+    0%{margin-left: 0px;}
+    15%{margin-left: 0px;}
+
+    20%{margin-left: -415px;}
+    35%{margin-left: -415px;}
+
+    40%{margin-left: -830px;}
+    55%{margin-left: -830px;}
+
+    60%{margin-left: -1245px;}
+    75%{margin-left: -1245px;}
+
+    80%{margin-left: -1660px;}
+    100%{margin-left: -1660px;}
+}
+
+.slider2{
+    grid-area: slider2;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.imgslider2{
+    width: 415px;
+}
+
+#imagen{
+    width: 415px;
+    margin: 0px auto;
+    overflow: hidden;
+}
+
+ul{
+    width: 2075px;
+    display: flex;
+    list-style: none;
+    
+    animation: slide 15s infinite alternate;
+}
+
+@keyframes slide{
+    0%{margin-left: 0px;}
+    15%{margin-left: 0px;}
+
+    20%{margin-left: -415px;}
+    35%{margin-left: -415px;}
+
+    40%{margin-left: -830px;}
+    55%{margin-left: -830px;}
+
+    60%{margin-left: -1245px;}
+    75%{margin-left: -1245px;}
+
+    80%{margin-left: -1660px;}
+    100%{margin-left: -1660px;}
+}
+
+.section{
+    grid-area: section;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+h2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 10px;
+}
+
+.article1{
+    box-shadow: -1px 0px 4px 0px black;
+    background-color: rgb(234, 243, 243);
+    width: 640px;
+    height: 199px;
+    float: left;
+    margin: 10px;
+    text-align: left;
+    padding: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.article2{
+    box-shadow: -1px 0px 4px 0px black;
+    background-color: rgb(234, 243, 243);
+    width: 640px;
+    height: 199px;
+    float: right;
+    margin: 10px;
+    text-align: left;
+    padding: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.footer{
+    grid-area: footer;
+    background-image: url(../img/pie_copia.jpg);
+}
+
+.grid-container{
+    display: grid;
+    gap: 10px;
+    grid-template-areas:  
+    "header"
+    "slider1"
+    "slider2"
+    "section"
+    "footer";
+}
+
+@media (min-width: 1080px){
+    .grid-container{
+        grid-template:  
+        "header header header header" 170px
+        "slider1 slider1 slider1 slider2" 300px
+        "section section section section" auto
+        "footer footer footer footer" 140px /
+        300px auto 300px;
+    }
+}
